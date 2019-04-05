@@ -14,9 +14,9 @@ class EmailParser
   end
 
   def parse
-
+    binding.pry
     emails_array = emails.scan(/[a-z]+@[a-z]+.com[,\s]/) + emails.scan(/\s[a-z]+@[a-z]+.com/)
-
+    #binding.pry
     emails_array.map {|email|
       if email[-1] == ","
         email[0...-1]
