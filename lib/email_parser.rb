@@ -28,7 +28,7 @@ class EmailParser
 
   def parse
     binding.pry
-    emails.split(/[\s(,\s)]/)
+    emails.split(/[\s,]/).select {|email| email != ""}.uniq
   end
 
 end
