@@ -13,17 +13,22 @@ class EmailParser
     @emails = emails
   end
 
+  # def parse
+  #
+  #   emails_array = emails.scan(/[a-z]+@[a-z]+.com[,\s]/) + emails.scan(/\s[a-z]+@[a-z]+.com/)
+  #
+  #   emails_array.map {|email|
+  #     if email[-1] == ","
+  #       email[0...-1]
+  #     else
+  #       email.strip
+  #     end
+  #   }.uniq
+  # end
+
   def parse
     binding.pry
-    emails_array = emails.scan(/[a-z]+@[a-z]+.com[,\s]/) + emails.scan(/\s[a-z]+@[a-z]+.com/)
-    #binding.pry
-    emails_array.map {|email|
-      if email[-1] == ","
-        email[0...-1]
-      else
-        email.strip
-      end
-    }.uniq
+    emails.split(/[\s(,\s)]/)
   end
 
 end
